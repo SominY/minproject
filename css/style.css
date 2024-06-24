@@ -1,0 +1,274 @@
+:root {
+    --color-primary: #ffffff;
+    --color-primary2: black;
+    --color-accent: #03e8f9;
+    --color-accent2: rgb(255, 48, 48);
+    --color-point: #eaeaea;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  /*전체 화면 높이*/
+
+    font-family: "Hind", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: var(--color-primary);
+    text-shadow: -1px 0px 10px rgba(106,99,99,0.76);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+/* 자동 완성 효과 제거 */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-transition: background-color 9999s ease-out;
+    -webkit-box-shadow: 0 0 0 500px transparent inset !important;
+    -webkit-text-fill-color: #fff !important;
+}
+
+/* ---------시계--------- */
+#clock {
+    font-size: 12rem;
+   
+}
+
+/* ---------로그인 항목 및 결과--------- */
+#login-form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: -4rem;
+}
+
+#loginSay {
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+#inputName {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: transparent;
+    border-bottom: 2.5px solid var(--color-primary);
+
+    background-color: transparent;
+
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-shadow: 1px 1px 4px rgba(106,99,99,0.76);
+}
+
+#inputName:focus {
+    outline: none;
+}
+
+#btnLogin {
+    width: 8rem;
+    height: 3rem;
+    margin-top: 1rem;
+    border-radius: 30px;
+    border: 2.5px solid var(--color-primary);
+    background-color: transparent;
+
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+#btnLogin:hover {
+    background-color: var(--color-primary);
+    color: black;
+    cursor: pointer;
+}
+
+#greeting__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    bottom: 25%;
+    font-size: 3rem;
+}
+
+.fa-solid, .fa-solid:hover {
+    font-size: 1.3rem;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+/* 모달 팝업 스타일 */
+#modalChoice {
+    position: fixed;
+    display: none;
+    z-index: 1050;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 350px;
+
+    text-shadow: none;
+    color: black;
+}
+
+#modalChoice.show {
+    display: block;
+}
+
+
+/* ---------명언--------- */
+#quote {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 1.5rem;
+
+    position: absolute; /* 절대 위치로 설정 */
+    bottom: 0; /* 화면 아래에 배치 */  
+}
+
+#quote .indent {
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* ---------투두리스트--------- */
+.todo {
+    position: fixed;
+    width: 300px;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    top: 2%;
+    right: 2%;
+
+    background-color: var(--color-primary2);
+    opacity: 0.85;
+}
+
+#date {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+}
+
+#todo_form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#todo_input {
+    background: none;
+    border: none;
+    color: var(--color-primary);
+}
+
+#todo_input:focus {
+    outline: none;
+}
+
+#todo_input::placeholder {
+    color: var(--color-point);
+    font-weight: 600;
+}
+
+#todo_btn {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+#todo_list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0.2rem;
+}
+
+#todo_list li {
+    margin-bottom: 0.2rem;
+}
+
+#todo_list span {
+    flex-grow: 1;
+    margin-left: 0.6rem;
+}
+
+#todo_list button {
+    position: absolute;
+    right: 0;
+    margin-right: 1rem;
+    background-color: transparent;
+    border: none;
+    color: var(--color-accent2);
+    font-weight: bold;
+}
+
+
+/* ------------------날씨 항목-------------------- */
+#weather {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 200px;
+    height: 80px;
+
+    position: fixed;
+    top: 2%;
+    left: 1%;
+}
+
+.weather_icon {
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+}
+
+
+
+#details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+
+    color: white;
+    font-size: 20px;
+}
+
+
+
