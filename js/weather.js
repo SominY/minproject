@@ -20,7 +20,7 @@ function onGeoOk(position) {
             let condition = result.weather[0].main;
             //console.log(condition);
             if (condition === "Clouds") {
-                weatherIcon.src = "weather_img/clouds.png";
+                weatherIcon.src = "weather_img/cloud.png";
             }
             else if (condition === "Clear") {
                 weatherIcon.src = "weather_img/clear.png";
