@@ -10,6 +10,7 @@
    
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/weather.css">
 
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -84,7 +85,7 @@
 
 <!-- 날씨 -->
 <div id="weather">
-    <img src="weather_img/clear.png" id="weather_icon">
+    <img src="weather_img/clear.png">
     <div id="details">
         <span id="city"></span>
         <span id="temp"></span>
@@ -92,7 +93,8 @@
 </div>
 
 <!-- 날씨 검색 -->
-<div class="overlay">
+<div class="overlay" id="weatherPopup">
+
 <div class="container">
     <div class="search-box">
         <i class="fa-solid fa-location-dot"></i>
@@ -143,6 +145,7 @@
         </div>
     </div>
 </div>
+
 </div>
 
 <script src="js/app.js"></script>
