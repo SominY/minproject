@@ -12,31 +12,33 @@
 
 &nbsp; a. _Document Object Model (DOM) 조작_ <br><br>
 &nbsp;&nbsp; - `getElementById`, `querySelector` 등을 사용하여 HTML 요소를 가져오고, `classList`를 사용하여 클래스 추가/제거. <br>
-&nbsp;&nbsp; - 예: <br>
+&nbsp;&nbsp; - 예: 
            ``` javascript
            const loginForm = document.getElementById("login-form"); 
            loginForm.classList.remove(HIDDEN_CLASSNAME);```
-                   
+<br><br>                   
 
-b. _로컬 저장소 (localStorage)_ <br><br>
-    - `localStorage`를 사용하여 사용자 이름을 브라우저에 저장하고, 페이지를 새로고침해도 사용자 이름을 기억. <br>
-    - 예: 
-      ```
+&nbsp; b. _로컬 저장소 (localStorage)_ <br><br>
+&nbsp;&nbsp; - `localStorage`를 사용하여 사용자 이름을 브라우저에 저장하고, 페이지를 새로고침해도 사용자 이름을 기억. <br>
+&nbsp;&nbsp; - 예: 
+      ```javascript
       localStorage.getItem(USERNAME_KEY);
       localStorage.setItem(USERNAME_KEY, userName);
       ```
 <br><br>
-c. _이벤트 핸들링_ <br><br>
-    - 다양한 이벤트(`submit`, `click`)를 처리하여 사용자 인터랙션에 반응. <br>
-    - 예: <br>
+
+&nbsp; c. _이벤트 핸들링_ <br><br>
+&nbsp;&nbsp; - 다양한 이벤트(`submit`, `click`)를 처리하여 사용자 인터랙션에 반응. <br>
+&nbsp;&nbsp; - 예: 
       ```javascript
       loginForm.addEventListener('submit', onLoginSubmit);
       btnEdit.addEventListener("click", openModal);
       ```
 <br><br>
-4. **조건부 로직**:
-    - 조건문(`if`, `else if`, `else`)을 사용하여 시간대에 따라 인사말을 다르게 표시.
-    - 예: 
+
+&nbsp; d. _조건부 로직_
+&nbsp;&nbsp; - 조건문(`if`, `else if`, `else`)을 사용하여 시간대에 따라 인사말을 다르게 표시. <br>
+&nbsp;&nbsp; - 예: 
       ```javascript
       if (hour < 12) {
           return `Good Morning, ${userName}!`;
@@ -48,10 +50,11 @@ c. _이벤트 핸들링_ <br><br>
           return `Good Night, ${userName}!`;
       }
       ```
+<br><br>
 
-5. **모달 처리**:
-    - 모달 창을 열고 닫는 로직을 포함하여 사용자 이름을 수정할 수 있는 인터페이스 제공.
-    - 예: 
+&nbsp; e. _모달 처리_
+&nbsp;&nbsp;- 모달 창을 열고 닫는 로직을 포함하여 사용자 이름을 수정할 수 있는 인터페이스 제공. <br>
+&nbsp;&nbsp;- 예: 
       ```javascript
       modalChoice.classList.add('show');
       modalChoice.classList.remove('show');
