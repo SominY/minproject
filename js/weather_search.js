@@ -4,7 +4,7 @@ const weatherBox = document.querySelector('.weather-box');
 const weatherDetails = document.querySelector('.weather-details');
 const error404 = document.querySelector('.not-found');
 const cityHide = document.querySelector('.city-hide');
-const inputField = document.querySelector('.search-box input'); // 입력 필드 선택
+const inputField = document.querySelector('.search-box input'); 
 
 const weather = document.getElementById('weather');
 const weatherPopup = document.getElementById('weatherPopup');
@@ -118,7 +118,8 @@ function handleNotFoundError(city) {
 
 // 날씨 팝업 초기화 함수
 function resetWeatherPopup() {
-    inputField.value = ''; // 입력 필드 초기화
+    inputField.value = '';
+
     error404.classList.remove('active');
     weatherBox.classList.remove('active');
     weatherDetails.classList.remove('active');
