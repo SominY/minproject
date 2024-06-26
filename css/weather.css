@@ -115,10 +115,6 @@
     transition-delay: .6s;
 }
 
-.weather-box .box .info-weather {
-    transform: translateY(-120%);
-}
-
 .container.active .weather-box .box .info-weather,
 .container.active .weather-details .humidity .info-humidity,
 .container.active .weather-details .wind .info-wind {
