@@ -208,4 +208,143 @@ checkBox.addEventListener('change', function() {
     span.style.textDecoration = checkBox.checked ? 'line-through' : 'none';
 });
 ```
+<br>
+
+## 4. &nbsp; 날씨 APP
+
+&nbsp; 📍 &nbsp;  **사용자의 현재 위치를 자동으로 감지하여 날씨를 보여주는 지오로케이션 기능과 다양한 도시의 날씨를 검색할 수 있는 검색 기능 구현** <br>
+&nbsp;&nbsp;&nbsp;&nbsp; • _사용자 편의성을 높이기 위해 지오로케이션 API와 Fetch API를 활용하여 날씨 데이터를 동적으로 받아오고, JavaScript로 DOM을 조작하여 실시간으로 날씨 정보를 사용자에게 제공_ <br>
+&nbsp;&nbsp;&nbsp;&nbsp; • _또한, 이벤트 리스너를 사용하여 사용자 인터랙션을 처리하고, 에러 처리를 통해 사용자에게 친절한 메시지를 제공_ <br>
+
+### ⚡️ &nbsp; 사용된 기능
+&nbsp; a. _Geolocation API_ <br><br>
+&nbsp; &nbsp; -  navigator.geolocation.getCurrentPosition을 사용하여 사용자의 현재 위치(위도, 경도)를 가져옴 <br>
+``` javascript
+navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
+```
+&nbsp; &nbsp; - 위치 성공 콜백 함수: onGeoOk 함수는 위치 정보를 성공적으로 가져왔을 때 호출 <br>
+``` javascript
+function onGeoOk(position) {
+    const lat = position.coords.latitude;
+    const lon = position.coords.longitude;
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
+
+    fetch(url)
+        .then((response) => response.json())
+        .then(json => {
+            // 날씨 데이터 처리 로직
+        });
+}
+```
+&nbsp; &nbsp; - 위치 실패 콜백 함수: onGeoError 함수는 위치 정보를 가져오지 못했을 때 호출 <br>
+``` javascript
+function onGeoError() {
+    alert("Can't find you. No weather for you.");
+}
+```
+<br>
+
+&nbsp; b. _Fetch API_ <br><br>
+&nbsp; &nbsp; -  API 호출: OpenWeatherMap API를 사용하여 날씨 데이터를 가져오고, fetch 메서드를 사용하여 URL로부터 데이터를 받아옴 <br>
+``` javascript
+fetch(url)
+    .then((response) => response.json())
+    .then(json => {
+        // 받아온 날씨 데이터 처리
+    });
+```
+<br>
+&nbsp; c. _DOM 조작_ <br><br>
+&nbsp; &nbsp; -  데이터 표시: 받아온 데이터를 HTML 요소에 표시 <br>
+``` javascript
+const city = document.getElementById("city");
+const weather = document.getElementById("temp");
+city.innerText = json.name;
+weather.innerText = `${Math.round(json.main.temp)} °C`;
+```
+
+&nbsp; &nbsp; - 날씨 아이콘 변경: 날씨 상태에 따라 아이콘을 변경 <br>
+``` javascript
+const weatherIcon = document.querySelector("#weather img");
+switch(json.weather[0].main) {
+    case 'Clear':
+        weatherIcon.src = 'weather_img/clear.png';
+        break;
+    // 다른 날씨 상태들 처리
+}
+```
+<br>
+
+&nbsp; d. _Event Listeners_ <br><br>
+&nbsp; &nbsp; - 클릭 이벤트: 특정 요소에 대한 클릭 이벤트를 처리 <br>
+``` javascript
+weather.addEventListener('click', () => {
+    openWeatherPopup();
+});
+```
+<br>
+
+&nbsp; e. _Popup 기능_ <br><br>
+&nbsp; &nbsp; - 팝업 열기/닫기: 날씨 정보를 보여주는 팝업을 열고 닫는 기능 <br>
+``` javascript
+function openWeatherPopup() {
+    resetWeatherPopup();
+    weatherPopup.classList.add('active');
+}
+
+function closeWeatherPopup() {
+    weatherPopup.classList.remove('active');
+}
+```
+<br>
+
+&nbsp; f. _사용자 입력 처리_ <br><br>
+&nbsp; &nbsp; - 검색 기능: 사용자가 입력한 도시 이름을 바탕으로 날씨 정보를 검색 <br>
+``` javascript
+const search = document.querySelector('.search-box button');
+search.addEventListener('click', () => {
+    searchWeather();
+});
+
+function searchWeather() {
+    const city = inputField.value.trim();
+    if (city === '') return;
+
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
+    fetch(url)
+        .then(response => response.json())
+        .then(json => {
+            if (json.cod == '404') {
+                handleNotFoundError(city);
+            } else {
+                handleWeatherData(json, city);
+            }
+        });
+}
+```
+<br>
+
+&nbsp; g. _에러 처리_ <br><br>
+&nbsp; &nbsp; - 에러 메시지 표시: 검색된 도시가 없을 경우 에러 메시지를 표시 <br>
+``` javascript
+function handleNotFoundError(city) {
+    cityHide.textContent = city;
+    error404.classList.add('active');
+}
+```
+<br>
+
+### &nbsp; 💫 &nbsp; OpenWeatherMap API <br>
+&nbsp; &nbsp; ✓ &nbsp; 날씨 데이터 제공: OpenWeatherMap API를 사용하여 날씨 정보를 제공 <br>
+&nbsp; &nbsp; &nbsp; &nbsp; • 현재 위치 날씨: 사용자의 위도와 경도를 바탕으로 날씨 정보를 가져옴 <br>
+&nbsp; &nbsp; &nbsp; &nbsp; • 도시 이름 검색: 사용자가 입력한 도시 이름을 바탕으로 날씨 정보를 가져옴 <br>
+``` javascript
+const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
+const searchUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
+```
+
+
+
+
+
 
