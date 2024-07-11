@@ -232,6 +232,8 @@ checkBox.addEventListener('change', function() {
 &nbsp;&nbsp;&nbsp;&nbsp; • _사용자 편의성을 높이기 위해 지오로케이션 API와 Fetch API를 활용하여 날씨 데이터를 동적으로 받아오고, JavaScript로 DOM을 조작하여 실시간으로 날씨 정보를 사용자에게 제공_ <br>
 &nbsp;&nbsp;&nbsp;&nbsp; • _또한, 이벤트 리스너를 사용하여 사용자 인터랙션을 처리하고, 에러 처리를 통해 사용자에게 친절한 메시지를 제공_ <br>
 
+<img width=80%, src="https://github.com/SominY/minproject/assets/154952345/79e5ac1b-092b-4feb-91f2-fd95dfeaf505">
+
 ### ⚡️ &nbsp; 사용된 기능
 &nbsp; a. _Geolocation API_ <br><br>
 &nbsp; &nbsp; -  navigator.geolocation.getCurrentPosition을 사용하여 사용자의 현재 위치(위도, 경도)를 가져옴 <br>
