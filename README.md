@@ -81,6 +81,11 @@
 
 &nbsp; 📍 &nbsp; 페이지가 로드될 때마다 랜덤으로 배경 이미지와 인용구가 설정되며, 실시간으로 시간이 업데이트 <br>
 
+<p align="center">
+<img width="45%" alt="스크린샷 2024-07-11 오후 12 27 08" src="https://github.com/SominY/minproject/assets/154952345/b1e8ad40-2a03-4257-8166-c545e26ea226">
+<img width="45%" alt="스크린샷 2024-07-11 오후 12 27 11" src="https://github.com/SominY/minproject/assets/154952345/8b2199a8-f6ec-4912-8ab5-7488f495e6b1">
+</p>
+
 ### ⚡️ &nbsp; 사용된 기능
 
 &nbsp; a. _랜덤 배경 이미지 설정_ <br><br>
