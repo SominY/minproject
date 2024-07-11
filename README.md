@@ -8,6 +8,15 @@
 
 &nbsp; 📍 &nbsp; 로그인 폼, 인사말 표시, 모달 창을 통한 이름 수정 확인 등을 포함 <br>
 
+<p align="center">
+  <img width="45%" alt="스크린샷 2024-07-11 오후 12 21 00" src="https://github.com/SominY/minproject/assets/154952345/40e59e6a-f9be-4abf-967f-8d537c6f98d4">
+  <img width="45%" alt="스크린샷 2024-07-11 오후 12 21 12" src="https://github.com/SominY/minproject/assets/154952345/61f936c7-3349-4730-8f73-f618cde70d40">
+</p>
+<p align="center">
+  <img width="45%" alt="스크린샷 2024-07-11 오후 12 21 15" src="https://github.com/SominY/minproject/assets/154952345/1b55ffcf-e9fa-4d65-b372-9469b09a5d3e">
+  <img width="45%" alt="스크린샷 2024-07-11 오후 12 21 20" src="https://github.com/SominY/minproject/assets/154952345/1d6a4f0b-609c-4ec4-a0c6-474e810444c4">
+</p>
+
 ### ⚡️ &nbsp; 사용된 기능
 
 &nbsp; a. _Document Object Model (DOM) 조작_ <br><br>
