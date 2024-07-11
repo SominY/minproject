@@ -159,6 +159,8 @@ const minutes = String(date.getMinutes()).padStart(2, "0");
 
 &nbsp; 📍 &nbsp; 입력 창으로 할일을 추가 후 체크, 삭제 기능 구현 <br>
 
+<img src="https://github.com/SominY/minproject/assets/154952345/7e85aa39-7ab8-4f6a-b205-f76cf4bc4441">
+
 ### ⚡️ &nbsp; 사용된 기능
 
 &nbsp; a. _DOM 요소 선택_ <br><br>
